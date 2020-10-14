@@ -2,8 +2,8 @@
 
 :root {
     --primary-color: #0E1116;
-    --secondary-color: #EFF6E0;
-    --tertiary-color: #E3E026;
+    --secondary-color: #ffffff;
+    --tertiary-color: #be6633;
 }
 
 * {
@@ -33,6 +33,7 @@ h1, h2, h3 {
 
 p {
     padding: 1em 0;
+    line-height: normal;
 }
 
 a {
@@ -129,6 +130,7 @@ ul {
     justify-content: space-between;
     height: 70px;
     padding: 20px 0;
+
 }
 
 .logo {
@@ -195,25 +197,25 @@ input[type=text] {
 }
 
 .slide.current {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 /* Slider Background */
 
 .slide:nth-child(1) {
-    background: url(https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(slide1.jpg) no-repeat center center/cover;
 }
 
 .slide:nth-child(2) {
-    background: url(https://images.pexels.com/photos/1887609/pexels-photo-1887609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(slide2.jpg) no-repeat center center/cover;
 }
 
 .slide:nth-child(3) {
-    background: url(https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(slide3.jpg) no-repeat center center/cover;
 }
 
 .slide:nth-child(4) {
-    background: url(https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(slide4.jpg) no-repeat center center/cover;
 }
 
 /* Slider Background End*/
@@ -238,7 +240,7 @@ input[type=text] {
     width: 100%;
     height: 400px;
     /* background: url(https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80); */
-    background: url(https://images.pexels.com/photos/164827/pexels-photo-164827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url("chai.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -248,7 +250,7 @@ input[type=text] {
 .top-products .item-2{
     width: 100%;
     height: 400px;
-    background: url(https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url("spices.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -277,7 +279,7 @@ input[type=text] {
 /* Categories */
 
 #categories-main {
-    background: var(--secondary-color);
+    background-color: var(--primary-color);
     width: 100%;
     padding: 20px 20px;
 }
@@ -293,10 +295,14 @@ input[type=text] {
 .categories .item-card{
     width: 100%;
     height: 100%;
+    font-weight: bold;
+    color: #4d3319;
+    font-family: indian_calligraphy;
+    font-size: 25px;
 }
 
 .categories .catg-1,.catg-2,.catg-3,.catg-4 {
-    background-color: var(--primary-color);
+    background-image:url("parchment-sq.jpg");
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
@@ -336,7 +342,7 @@ input[type=text] {
 
 .grid-content .box-1 {
     order: 1;
-    background: url(https://www.macworld.co.uk/cmsdata/features/3669589/2019-imacs_thumb800.jpg);
+    background: url("amul.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -346,11 +352,12 @@ input[type=text] {
 .grid-content .box-2 {
     order: 2;
     box-shadow: inset 0 0 20px;
+    background-image: url("old-brown-paper-texture-image-900x741.jpg");
 }
 
 .grid-content .box-3 {
     order: 4;
-    background: url(https://www.gizbot.com/images/2019-02/microsoft-surface-pro-6_154936885030.jpg);
+    background: url("britannia.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -359,11 +366,12 @@ input[type=text] {
 .grid-content .box-4 {
     order: 3;
     box-shadow: inset 0 0 20px;
+    background-image: url("old-brown-paper-texture-image-900x741.jpg");
 }
 
 .grid-content .box-5 {
     order: 5;
-    background: url(https://www.gizbot.com/images/2017-11/lenovo-ideapad-320_151134688760.jpg);
+    background: url("kissan.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -372,6 +380,7 @@ input[type=text] {
 .grid-content .box-6 {
     order: 6;
     box-shadow: inset 0 0 20px;
+    background-image: url("old-brown-paper-texture-image-900x741.jpg");
 }
 
 /* Footer About */
@@ -540,3 +549,30 @@ input[type=text] {
         margin-left: 10px;
     }
 }
+
+.navicon{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+  margin: 25px 10px;
+}
+
+@font-face {
+  font-family: indian_calligraphy;
+  src: url(SAMARN__.ttf);
+}
+
+.heading{
+    font-family: indian_calligraphy;
+    font-size: 65px;
+}
+.firstp{
+    line-height: 0.5;
+}
+
+.aboutlogo {
+    height: 250px ;
+    width: 250px;
+    display: inline-block;
+}
+
