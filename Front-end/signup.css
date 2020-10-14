@@ -16,7 +16,7 @@ body {
     background-image: url("old-brown-paper-texture-image-900x741.jpg");
     padding: 20px;
     text-align: center;
-    margin: 8% auto 0;
+    margin: 30px auto;
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
     border-radius: 55px 5px 55px 5px;
 }
@@ -25,6 +25,11 @@ body {
     color: #4d3319;
     font-size: 50px;
     font-family: indian_calligraphy;
+}
+
+.account-type {
+    color: #4d3319;
+    font-weight: bold;
 }
 
 .input-box {
@@ -50,6 +55,10 @@ button {
     font-family: indian_calligraphy;
     font-weight: bold;
     cursor: pointer;
+}
+
+#logo {
+    width: 60px;
 }
 
 p {
