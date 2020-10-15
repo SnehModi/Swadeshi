@@ -339,7 +339,7 @@ input[type=text] {
 
 .grid-content .box-1 {
     order: 1;
-    background: url("amul.jpg");
+    background: url("signup.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -354,7 +354,7 @@ input[type=text] {
 
 .grid-content .box-3 {
     order: 4;
-    background: url("britannia.jpg");
+    background: url("signup.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -368,7 +368,7 @@ input[type=text] {
 
 .grid-content .box-5 {
     order: 5;
-    background: url("kissan.jpg");
+    background: url("signup.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
