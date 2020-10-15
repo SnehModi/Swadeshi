@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #0E1116;
-    --secondary-color: #EFF6E0;
+    --secondary-color: #ffffff;
     --tertiary-color: #be6633;
 }
 
@@ -13,7 +13,7 @@
 }
 
 body {
-    background: var(--secondary-color);
+    background-image: url("background.jpg");
     color: var(--primary-color);
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
@@ -185,4 +185,9 @@ a {
     .prod-detail {
         margin-top: 20px;
     }
+}
+
+.prod-detail{
+    background-image: url("old-brown-paper-texture-image-900x741.jpg");
+    background-repeat: no-repeat;
 }
