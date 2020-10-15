@@ -64,7 +64,18 @@ body{
   background-image: url("old-brown-paper-texture-image-900x741.jpg");
 }
 
+.card:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,100);
+}
+
 @font-face {
   font-family: indian_calligraphy;
   src: url(SAMARN__.ttf);
+}
+
+p{
+  font-family: indian_calligraphy;
+  font-size: 50px;
+  color: #ffdd99;
+  text-align: center;
 }
