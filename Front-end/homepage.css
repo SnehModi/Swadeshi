@@ -295,10 +295,7 @@ input[type=text] {
 .categories .item-card{
     width: 100%;
     height: 100%;
-    font-weight: bold;
     color: #4d3319;
-    font-family: indian_calligraphy;
-    font-size: 25px;
 }
 
 .categories .catg-1,.catg-2,.catg-3,.catg-4 {
@@ -346,7 +343,7 @@ input[type=text] {
 
 .grid-content .box-1 {
     order: 1;
-    background: url("amul.jpg");
+    background: url("signup.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -361,7 +358,7 @@ input[type=text] {
 
 .grid-content .box-3 {
     order: 4;
-    background: url("britannia.jpg");
+    background: url("signup.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -375,7 +372,7 @@ input[type=text] {
 
 .grid-content .box-5 {
     order: 5;
-    background: url("kissan.jpg");
+    background: url("signup.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
