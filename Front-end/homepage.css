@@ -220,8 +220,8 @@ input[type=text] {
 
 /* Slider Background End*/
 
-#showcase h1 {
-    padding-top: 100px;
+.heading {
+    padding: 50px;
 }
 
 #showcase .content-wrap {
@@ -259,7 +259,7 @@ input[type=text] {
 
 .top-products .content {
     text-align: left;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-left: 40px;
 }
 
@@ -338,6 +338,10 @@ input[type=text] {
 .grid-content .content-wrap {
     margin-top: 50px;
     padding: 0 40px;
+}
+
+.grid-content .content-wrap h2 {
+    padding: 10px;
 }
 
 .grid-content .box-1 {

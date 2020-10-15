@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <title>Product Verification</title>
         <link rel="stylesheet" href="./homepage.css">
-        <link rel="stylesheet" href="./product-verification.css">
+        <link rel="stylesheet" href="./signup.css">
+        <link rel="stylesheet" href="./product_verification.css">
     </head>
 
     <body>
@@ -13,25 +14,31 @@
             <h3>Draft Your Product For Verification</h3>
         </header>
 
-        <section class="">
-            <input type="text" placeholder="Product Name" required></input><br>
-            <input type="url" placeholder="Product Image URL" required></input><br>
-            <input type="number" placeholder="Product Price (Rs.)" required></input>
-            <input type="number" placeholder="Product Quantity" required></input><br>
-        </section>
+        <form action="#">
 
-        <section class="">
+            <section class="">
+                <input class="input-box" type="text" placeholder="Product Name" minlength="3" maxlength="20" required></input><br>
+                <input class="input-box" type="url" placeholder="Product Image URL" required></input><br>
+                <input class="input-box" type="number" placeholder="Product Price (Rs.)" min="1" required></input>
+                <input class="input-box" type="number" placeholder="Product Quantity" min="1" max="1000" required></input><br>
+            </section>
 
-            <h3>Product Description</h3>
+            <hr>
 
-            <input class="product-description" type="text" placeholder="Material Name" required></input>
-            <input class="product-description" type="text" placeholder="Origin" required></input><br>
-            <input type="text" placeholder="Material Name" required></input>
-            <input type="text" placeholder="Origin" required></input><br>
-            <input type="text" placeholder="Material Name" required></input>
-            <input type="text" placeholder="Origin" required></input><br>
-            
-            <button type="submit">Verify</button>
-        </section>
+            <section class="">
+
+                <h3>Product Description</h3>
+
+                <input class="input-box" type="text" placeholder="Material-1 Name" minlength="3" maxlength="20" required></input>
+                <input class="input-box" type="text" placeholder="Origin" minlength="3" maxlength="20" required></input><br>
+                <input class="input-box" type="text" placeholder="Material-2 Name" minlength="3" maxlength="20" required></input>
+                <input class="input-box" type="text" placeholder="Origin" minlength="3" maxlength="20"required></input><br>
+                <input class="input-box" type="text" placeholder="Material-3 Name" minlength="3" maxlength="20" required></input>
+                <input class="input-box" type="text" placeholder="Origin" minlength="3" maxlength="20"required></input><br>
+                
+                <button type="submit">Verify</button>
+            </section>
+
+        </form>
     </body>
 </html>
