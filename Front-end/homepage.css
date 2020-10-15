@@ -295,10 +295,7 @@ input[type=text] {
 .categories .item-card{
     width: 100%;
     height: 100%;
-    font-weight: bold;
     color: #4d3319;
-    font-family: indian_calligraphy;
-    font-size: 25px;
 }
 
 .categories .catg-1,.catg-2,.catg-3,.catg-4 {
