@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('navbar.css');
+@import url('footer.css');
+
+:root {
+    --primary-color: #0E1116;
+    --secondary-color: #EFF6E0;
+    --tertiary-color: #E3E026;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+p {
+    padding: 1em 0;
+}
+
+ul {
+    list-style: ' - ';
+}
+
+a {
+    text-decoration: none;
+    color: rgb(12, 34, 224);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--tertiary-color);
+    font-size: 0.8em;
+    font-weight: 700;
+    text-decoration: none;
+    margin: .5em 0;
+    padding: 0.5em 2em;
+    border: 1px solid var(--tertiary-color);
+    transition: color,background 200ms ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+/* Filter */
+
+.filter {
+    position: fixed;
+    top: 30%;
+    color: white;
+    background: rgb(70, 67, 67);
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: padding 200ms ease;
+}
+
+.filter:hover {
+    padding: 10px 40px;
+}
+
+/* Filter-menu */
+
+.filter-menu {
+    text-transform: capitalize;
+    position: fixed;
+    top: 0;  
+    height: 100vh;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--secondary-color);
+    padding-left: 30px;
+    padding-top: 30px;
+    transform: translateX(-1000px);
+    transition: transform 500ms ease;
+    overflow: auto;
+}
+
+.filter-menu .close-filter {
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.filter-option {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-option label{
+    margin-left: 10px;
+}
+
+
+/* Scroll bar */
+.filter-menu::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.filter-menu::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.filter-menu::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+.filter-menu::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+/* Header */
+
+#category-header {
+    margin: 40px 0;
+}
+
+/* Container */
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* Product grid */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+
+/* card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* load-more-btn */
+
+a#load-more-btn {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+
+@media(max-width:925px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);  
+    }
+
+    
+}
+
+
+@media(max-width:500px)  { 
+    #menu-btn, .sign-in {
+        display: block;
+    }
+    
+    #menu-btn:hover,.sign-in:hover {
+        color: var(--tertiary-color);
+    }
+
+    .nav-bar ul {
+        display: none;
+    }
+
+    .nav-bar {
+        justify-content: center;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3,1fr);  
+    }
+
+}
