@@ -1,6 +1,6 @@
 <?php
 
-    define('ROOT_URL', 'http://localhost/INP_PROJECT/Backend/');
+    define('ROOT_URL', 'http://localhost/INP_PROJECT/Swadeshi/Backend/');
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '2CEf5daWQjNAB7nh');
