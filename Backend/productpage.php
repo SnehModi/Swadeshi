@@ -18,6 +18,13 @@
     $tags = explode(',', $product['tags']);
     $features = explode('.', $product['longDis']);
     $avail = $product['quantity']>5 ? 'In Stock': 'Out of Stock';
+    $starsTotal = 5;
+    // Rating stars
+    $starPercentage = ($product['rating'] / $starsTotal) * 100;
+
+    // Round to nearest 10
+    $starPercentageRounded = round($starPercentage / 10) * 10;
+
     // print_r($product);
 
     $query = "SELECT id,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $tags[0] . "%' AND id!=" . $product['id'] . " LIMIT 4";
@@ -58,14 +65,11 @@
                 <h1 class="title"><?php echo $product['name'] ?></h1>
     
                 <div class="review">
-                    <p>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="count">(<?php echo $product['review'] ?>)</span> Reviews
-                    </p>
+                    <div class="stars-outer">
+                        <div class="stars-inner" style="width: <?php echo $starPercentageRounded ?>%;"></div>
+                    </div>
+                    <span class="number-rating"><?php echo $product['rating'] ?></span>
+                    <span class="count">(<?php echo $product['review'] ?>)</span> Reviews
                 </div>
                 <h2 class="price">$<?php echo $product['price'] ?></h2>
                 <div class="status">
@@ -85,6 +89,7 @@
     
                 <div class="description">
                     <p><?php echo $product['shortDis'] ?></p>
+                    <h3>Features: </h3>
                     <ul class="features">
                             <?php foreach($features as $feature): ?>
                                 <li><?php echo $feature ?></li>
@@ -146,7 +151,10 @@
             <br><br>
             <div class="product-grid">
 
-                <?php foreach($similar_products as $product): ?>
+                <?php foreach($similar_products as $product): 
+                    $starPercentage = ($product['rating'] / $starsTotal) * 100;
+                    $starPercentageRounded = round($starPercentage / 10) * 10;
+                    ?>
                     <div class="card">
                         <a href=<?php echo ROOT_URL . "productpage.php?id=" . $product['id'] ?>>
                             <img src=<?php echo $file . $product['thumbnail'] ?> width="196px" height="196px">
@@ -154,13 +162,12 @@
                         </a>
                         <p>by <span class="product-company"><?php echo $product['manufacturer'] ?></span></p>
                         <div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="count">(<?php echo $product['review'] ?>)</span>
+                            <div class="review">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: <?php echo $starPercentageRounded ?>%;"></div>
+                                </div>
+                                <span class="number-rating"><?php echo $product['rating'] ?></span>
+                                <span class="count">(<?php echo $product['review'] ?>)</span> Reviews
                             </div>
                             <br>
                             <div class="price">$<?php echo $product['price'] ?></div>
@@ -177,6 +184,6 @@
 
 
     
-    <script src="css/productpage.js"></script>
+    <script src="js/productpage.js"></script>
 </body>
 </html>

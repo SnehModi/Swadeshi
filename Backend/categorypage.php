@@ -22,6 +22,7 @@
         $result = mysqli_query($conn, $query);
         $prices = mysqli_fetch_all($result, MYSQL_ASSOC);
         $price_array = [];
+        $starsTotal = 5;
     
         foreach($prices as $p){
             array_push($price_array, intval($p['price']));
@@ -101,27 +102,29 @@
 
                 <div class="product-grid">
 
-                    <?php foreach($products as $product): ?>
-                        <div class="card">
-                            <a href=<?php echo ROOT_URL . "productpage.php?id=" . $product['id'] ?>>
-                                <img src=<?php echo $file . $product['thumbnail'] ?> width="196px" height="196px">
-                                <p class="description"><?php echo $product['shortDis'] ?></p>
-                            </a>
-                            <p>by <span class="product-company"><?php echo $product['manufacturer'] ?></span></p>
-                            <div>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span class="count">(<?php echo $product['review'] ?>)</span>
+                <?php foreach($products as $product): 
+                    $starPercentage = ($product['rating'] / $starsTotal) * 100;
+                    $starPercentageRounded = round($starPercentage / 10) * 10;
+                    ?>
+                    <div class="card">
+                        <a href=<?php echo ROOT_URL . "productpage.php?id=" . $product['id'] ?>>
+                            <img src=<?php echo $file . $product['thumbnail'] ?> width="196px" height="196px">
+                            <p class="description"><?php echo $product['shortDis'] ?></p>
+                        </a>
+                        <p>by <span class="product-company"><?php echo $product['manufacturer'] ?></span></p>
+                        <div>
+                            <div class="review">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: <?php echo $starPercentageRounded ?>%;"></div>
                                 </div>
-                                <br>
-                                <div class="price">$<?php echo $product['price'] ?></div>
+                                <span class="number-rating"><?php echo $product['rating'] ?></span>
+                                <span class="count">(<?php echo $product['review'] ?>)</span>
                             </div>
-                        </div>  
-                    <?php endforeach; ?>
+                            <br>
+                            <div class="price">$<?php echo $product['price'] ?></div>
+                        </div>
+                    </div>  
+                <?php endforeach; ?>
 
                 </div>
                 <br>
@@ -153,7 +156,12 @@
             <br><br>
             <div class="product-grid">
 
-                <?php foreach($products as $product): ?>
+            <?php 
+                $starsTotal = 5;
+                foreach($products as $product):
+                $starPercentage = ($product['rating'] / $starsTotal) * 100;
+                $starPercentageRounded = round($starPercentage / 10) * 10;
+                    ?>
                     <div class="card">
                         <a href=<?php echo ROOT_URL . "productpage.php?id=" . $product['id'] ?>>
                             <img src=<?php echo $file . $product['thumbnail'] ?> width="196px" height="196px">
@@ -161,19 +169,18 @@
                         </a>
                         <p>by <span class="product-company"><?php echo $product['manufacturer'] ?></span></p>
                         <div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            <div class="review">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: <?php echo $starPercentageRounded ?>%;"></div>
+                                </div>
+                                <span class="number-rating"><?php echo $product['rating'] ?></span>
                                 <span class="count">(<?php echo $product['review'] ?>)</span>
                             </div>
                             <br>
                             <div class="price">$<?php echo $product['price'] ?></div>
                         </div>
                     </div>  
-                <?php endforeach; ?>
+            <?php endforeach; ?>
 
             </div>
         </div>

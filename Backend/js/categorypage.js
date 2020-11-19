@@ -2,6 +2,7 @@ const filter = document.querySelector('.filter');
 const filter_menu = document.querySelector('.filter-menu');
 const filter_close = document.querySelector('.close-filter');
 let offset = 0;
+const starsTotal = 5;
 
 // Menu-button
 const menu = document.getElementsByClassName('main-menu-hidden')[0]
@@ -32,6 +33,9 @@ const createCard = (jsonData, ROOT_URL) => {
     var html = '';
     var data;
     jsonData.forEach(product => {
+        const starPercentage = (product['rating'] / starsTotal) * 100;
+        // Round to nearest 10
+        const starPercentageRounded = Math.round(starPercentage / 10) * 10;
         data = `
             <div class="card">
                 <a href=${ ROOT_URL + "productpage.php?id=" +  product['id'] }>
@@ -40,13 +44,12 @@ const createCard = (jsonData, ROOT_URL) => {
                 </a>
                 <p>by <span class="product-company">${ product['manufacturer'] }</span></p>
                 <div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="count">(${ product['review']})</span>
+                    <div class="review">
+                        <div class="stars-outer">
+                            <div class="stars-inner" style="width: ${starPercentageRounded}%;"></div>
+                        </div>
+                        <span class="number-rating"> ${product['rating']} </span>
+                        <span class="count">(${product['review']})</span>
                     </div>
                     <br>
                     <div class="price">$${ product['price'] }</div>
@@ -114,7 +117,7 @@ const getProducts = (search, ROOT_URL, apply) => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // console.log(xhr.responseText)
             jsonData = JSON.parse(xhr.responseText)
-            console.log(jsonData)
+            // console.log(jsonData)
             if(jsonData.length > 0){
                 document.querySelector('#load-more-btn').style.display = "block";
                 let html = createCard(jsonData, ROOT_URL);

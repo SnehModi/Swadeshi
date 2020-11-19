@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('navbar.css');
 @import url('footer.css');
+@import url('displayrating.css');
 
 :root {
     --primary-color: #0E1116;
@@ -33,7 +34,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: rgb(12, 34, 224);
+    color: rgb(6, 18, 124);
 }
 
 .btn {
@@ -86,6 +87,7 @@ a {
     transform: translateX(-1000px);
     transition: transform 500ms ease;
     overflow: auto;
+    z-index: 10;
 }
 
 .filter-menu .close-filter {
@@ -151,6 +153,13 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: .5px solid rgba(6, 18, 124, 0.08);
+    padding: 20px;
+}
+
+.card:hover {
+    border: .5px solid rgba(6, 18, 124, 0.5);
+    transition: border 200ms ease;
 }
 
 

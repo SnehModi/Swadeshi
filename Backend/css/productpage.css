@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('navbar.css');
 @import url('footer.css');
+@import url('displayrating.css');
 
 :root {
     --primary-color: #0E1116;
@@ -47,6 +48,7 @@ a {
     padding: 1em 2em;
     border: 1px solid var(--tertiary-color);
     transition: color,background 200ms ease;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -114,8 +116,8 @@ a {
     padding: 10px 20px;
 }
 
-.prod-detail > div {
-    margin-top: 30px;
+.prod-detail > div,form {
+    margin: 30px 0;
 }
 
 .customize {
@@ -154,7 +156,7 @@ a {
 }
 
 .buying-option .btn {
-    margin: 0 10px;
+    margin: 30px 10px;
 }
 
 /* Product grid */
@@ -165,6 +167,24 @@ a {
     grid-gap: 30px;
 }
 
+.product-grid a {
+    color: rgb(6, 18, 124);
+}
+
+/* card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: .5px solid rgba(6, 18, 124, 0.08);
+    padding: 20px;
+}
+
+.card:hover {
+    border: .5px solid rgba(6, 18, 124, 0.5);
+    transition: border 200ms ease;
+}
 
 /* big landscape tablets, laptops, and desktops */ 
 @media(max-width:925px) {
