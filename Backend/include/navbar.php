@@ -17,9 +17,11 @@
         <li class="search-box">
             <form action="<?php echo ROOT_URL . 'categorypage.php' ?>"  method="GET">
                 <i class="fas fa-search fa-1x" ></i>
-                <input type="text" placeholder="Search" name="s" onkeyup="suggest(this.value)">
-                <div class="suggestion">
-                </div>
+                <div class="search-wrap">
+                    <input type="text" placeholder="Search" name="s" onkeyup="suggest(this.value)">
+                    <div class="suggestion">
+                    </div>
+                </div> 
             </form>
         </li>
         <li>
@@ -39,7 +41,7 @@
     <nav class="nav-container">
         <div class="nav-bar">
 
-            <a href="<?php echo ROOT_URL . 'homepage.php' ?>"><i class="fab fa-shopify fa-3x logo"></i></a>
+            <a href="<?php echo ROOT_URL . 'homepage.php' ?>"><img class = "navicon" src="images/swadeshi_logo.png"></a>
 
             <form action="<?php echo ROOT_URL . 'categorypage.php' ?>"  method="GET">
                 <ul class="search-box">

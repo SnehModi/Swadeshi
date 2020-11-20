@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('navbar.css');
 @import url('footer.css');
+@font-face {
+    font-family: indian_calligraphy;
+    src: url(SAMARN__.ttf);
+}
 
 :root {
     --primary-color: #0E1116;
@@ -62,13 +66,28 @@ a {
 
 /*  Header Showcase  */
 
+.heading{
+    font-family: indian_calligraphy;
+    font-size: 80px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.firstp{
+    line-height: 0.25;
+}
+
 #showcase {
     position: relative;
     overflow: hidden;
     color: var(--secondary-color);
     min-height: 450px;
-    /* background: var(--primary-color);
-    color: var(--tertiary-color); */
+}
+
+#showcase .content-wrap {
+    width: 100%;
+    position: absolute;
+    padding: 0 1.5em;
 }
 
 .slide {
@@ -89,32 +108,21 @@ a {
 /* Slider Background */
 
 .slide:nth-child(1) {
-    background: url(https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(../images/slide1.jpg) no-repeat center center/cover;
 }
 
 .slide:nth-child(2) {
-    background: url(https://images.pexels.com/photos/1887609/pexels-photo-1887609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(../images/slide2.jpg) no-repeat center center/cover;
 }
 
 .slide:nth-child(3) {
-    background: url(https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(../images/slide3.jpg) no-repeat center center/cover;
 }
 
 .slide:nth-child(4) {
-    background: url(https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+    background: url(../images/slide4.jpg) no-repeat center center/cover;
 }
 
-/* Slider Background End*/
-
-#showcase h1 {
-    padding-top: 100px;
-}
-
-#showcase .content-wrap {
-    width: 100%;
-    position: absolute;
-    padding: 0 1.5em;
-}
 
 /* Top products */
 

@@ -108,6 +108,14 @@ ul {
     transition: color 200ms ease;
 }
 
+.navicon{
+    height: 70px;
+    width: 70px;
+    display: inline-block;
+    margin: 25px 10px;
+}
+
+
 .search-box {
     position: relative;
     width: 500px;
@@ -146,14 +154,16 @@ input[type=text] {
     opacity: 0.9;
 }
 
-.main-menu-hidden li form{
+.search-wrap{
+    display: inline;
     position: relative;
 }
 
-.main-menu-hidden .suggestion {
-    width: 284px;
-    left: auto; 
-    top: unset;
+.search-wrap .suggestion {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 300px;
 }
 
 .suggestion a {

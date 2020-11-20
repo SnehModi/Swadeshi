@@ -36,6 +36,12 @@
     transition: color 200ms ease;
 }
 
+.aboutlogo {
+    height: 250px ;
+    width: 250px;
+    display: inline-block;
+}
+
 .footer-main .content-right .fa-shopify{
     color: var(--tertiary-color)
 }

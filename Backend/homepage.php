@@ -42,8 +42,10 @@
             <div class="slide"></div>
         </div>
         <div class="content-wrap">
-            <h1>You are Amazing</h1>
-            <p>And we have amazing products for you !</p>    
+            <h1 class="heading">Namaste!</h1>
+            <p class="firstp">Looking to be a part of Atmanirbhar bharat?</p>
+            <p class="firstp">You've come to the right place!</p> 
+            <p class="firstp">Find products that are all MADE IN INDIA</p>   
             <a href="<?php echo ROOT_URL . 'categorypage.php' ?>" class="btn">Explore</a>
         </div>  
     </header>

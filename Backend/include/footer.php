@@ -8,7 +8,7 @@
         </div>
         
         <div class="content-right">
-            <i class="fab fa-shopify fa-8x"></i>
+            <img src="images/swadeshi_logo.png" class="aboutlogo">
     
             <div class="connect">
                 <a href="www.facebook.com"><i class="fab fa-facebook-square fa-2x fb-icon"></i></a>
