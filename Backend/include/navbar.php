@@ -10,7 +10,11 @@
     </div>
 
     <div class="sign-in">
-        Login
+        <?php if(isset($_SESSION['user'])): ?>  
+            <a href="">Logout</a>       
+        <?php else: ?>
+            <a href="">Login</a> 
+        <?php endif; ?>
     </div>
 
     <ul class="main-menu-hidden">
@@ -25,13 +29,17 @@
             </form>
         </li>
         <li>
-            <a href="">My Account</a>
+            <?php if(isset($_SESSION['user'])): ?>  
+                <a href="">My Account</a>       
+            <?php else: ?>
+                <a href="">Login</a> 
+            <?php endif; ?>
         </li>
         <li>
-            <a href="">Categories</a>
+            <a href="<?php echo ROOT_URL . 'categorypage.php' ?>">Categories</a>
         </li>
         <li>
-            <a href="">My Cart</a>
+            <a href="<?php echo ROOT_URL . 'cartpage.php' ?>">My Cart</a>
         </li>
         <li>
             <a href="">About us</a>
@@ -59,12 +67,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#cart" alt="cart">
+                    <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
                         <i class="fas fa-shopping-cart fa-1x"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#login">
+                    <a href="<?php echo ROOT_URL . 'myaccount.php' ?>">
                         <i class="fas fa-user-circle fa-1x"></i>
                     </a>
                 </li>
@@ -75,6 +83,16 @@
 </div>
 
 <script>
+    // Menu-button
+    const menu = document.getElementsByClassName('main-menu-hidden')[0]
+    const menu_btn = document.getElementsByClassName('fa-bars')[0]
+
+    menu_btn.addEventListener('click', () => {
+        menu.classList.toggle('show')
+        menu_btn.classList.toggle('fa-bars')
+        menu_btn.classList.toggle('fa-times')
+    })
+
     const suggest_box = document.querySelectorAll('.suggestion');
     const suggest = (search) => {
         // console.log(search)

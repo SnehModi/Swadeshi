@@ -1,14 +1,3 @@
-
-// Menu-button
-const menu = document.getElementsByClassName('main-menu-hidden')[0]
-const menu_btn = document.getElementsByClassName('fa-bars')[0]
-
-menu_btn.addEventListener('click', () => {
-    menu.classList.toggle('show')
-    menu_btn.classList.toggle('fa-bars')
-    menu_btn.classList.toggle('fa-times')
-})
-
 // Image-shocase
 const main_img = document.querySelector('.main-img')
 const sm_img = document.getElementsByClassName('sm-img')
@@ -41,7 +30,7 @@ const addToCart = (prodId) => {
         }
     };
 
-    xhr.open("POST", "addtowishlist.php");
+    xhr.open("POST", "addtocart.php");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
 }
@@ -61,7 +50,7 @@ const addToWishlist = (prodId) => {
         }
     };
 
-    xhr.open("POST", "addtocart.php");
+    xhr.open("POST", "addtowishlist.php");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
 }

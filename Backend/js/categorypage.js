@@ -4,16 +4,6 @@ const filter_close = document.querySelector('.close-filter');
 let offset = 0;
 const starsTotal = 5;
 
-// Menu-button
-const menu = document.getElementsByClassName('main-menu-hidden')[0]
-const menu_btn = document.getElementsByClassName('fa-bars')[0]
-
-menu_btn.addEventListener('click', () => {
-    menu.classList.toggle('show')
-    menu_btn.classList.toggle('fa-bars')
-    menu_btn.classList.toggle('fa-times')
-})
-
 try {
     filter.addEventListener('click', () => {
         filter_menu.style.transform = "translateX(0px)";

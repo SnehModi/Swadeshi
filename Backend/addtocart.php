@@ -1,5 +1,6 @@
 
 <?php
+    // Add Item
     if(isset($_POST['qty']) and isset($_POST['color']) and isset($_POST['size'])){
 
         $qty = htmlentities($_POST['qty']);
@@ -15,7 +16,7 @@
 
         if (isset($_COOKIE['cart'])) {
             $cart = unserialize($_COOKIE['cart']);
-            if(array_search($prodId, array_column($cart, 'prodId'))+1){
+            if(in_array($prodId, array_column($cart, 'prodId'))){
                 echo "Already added to cart";
             } else {
                 $len = count($cart);
@@ -27,6 +28,25 @@
         }
         $cart = serialize($cart);
         setcookie('cart', $cart, time() + 60*60*24);
+    }
+
+    // Remove Item
+    if(isset($_POST['delete'])){
+        $prodId = $_POST['delete'];
+        if (isset($_COOKIE['cart'])) {
+            $cart = unserialize($_COOKIE['cart']);
+            if(in_array($prodId, array_column($cart, 'prodId'))){
+                $i = array_search($prodId, array_column($cart, 'prodId'));
+                unset($cart[$i]);
+                $cart = array_values($cart);
+            }
+            if(count($cart)==0){
+                setcookie('cart','', time() - 10);
+            } else {
+                $cart = serialize($cart);
+                setcookie('cart', $cart, time() + 60*60*24);
+            }
+        }
     }
 ?>
 

@@ -13,13 +13,3 @@ const nextSlide = () => {
 }
 
 setInterval(nextSlide, intervalTime)
-
-// Menu-button
-const menu = document.getElementsByClassName('main-menu-hidden')[0]
-const menu_btn = document.getElementsByClassName('fa-bars')[0]
-
-menu_btn.addEventListener('click', () => {
-    menu.classList.toggle('show')
-    menu_btn.classList.toggle('fa-bars')
-    menu_btn.classList.toggle('fa-times')
-})
