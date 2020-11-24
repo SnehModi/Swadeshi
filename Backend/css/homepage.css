@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('navbar.css');
+@import url('footer.css');
+@font-face {
+    font-family: indian_calligraphy;
+    src: url(SAMARN__.ttf);
+}
+
+:root {
+    --primary-color: #0E1116;
+    --secondary-color: #EFF6E0;
+    --tertiary-color: #E3E026;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+img {
+    display: block;
+    width:100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    padding: 1em 0;
+}
+
+p {
+    padding: 1em 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--tertiary-color);
+    font-size: 0.8em;
+    font-weight: 700;
+    text-decoration: none;
+    margin: .5em 0;
+    padding: 1em 2em;
+    border: 1px solid var(--tertiary-color);
+    transition: color,background 200ms ease;
+}
+
+.btn:hover {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+/*  Header Showcase  */
+
+.heading{
+    font-family: indian_calligraphy;
+    font-size: 80px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.firstp{
+    line-height: 0.25;
+}
+
+#showcase {
+    position: relative;
+    overflow: hidden;
+    color: var(--secondary-color);
+    min-height: 450px;
+}
+
+#showcase .content-wrap {
+    width: 100%;
+    position: absolute;
+    padding: 0 1.5em;
+}
+
+.slide {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 450px;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out ;
+}
+
+.slide.current {
+    opacity: 0.2;
+}
+
+/* Slider Background */
+
+.slide:nth-child(1) {
+    background: url(../images/slide1.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url(../images/slide2.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url(../images/slide3.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url(../images/slide4.jpg) no-repeat center center/cover;
+}
+
+
+/* Top products */
+
+#top-products {
+    width: 100%;
+}
+
+.top-products .item-1{
+    width: 100%;
+    height: 400px;
+    /* background: url(https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80); */
+    background: url(https://images.pexels.com/photos/164827/pexels-photo-164827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.top-products .item-2{
+    width: 100%;
+    height: 400px;
+    background: url(https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.top-products .content {
+    text-align: left;
+    padding-top: 80px;
+    padding-left: 40px;
+}
+
+.item-1 .content{
+    width: 100%;
+    height: 400px;
+    background: linear-gradient( to right, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.4),rgba(0, 0, 0,0));
+}
+
+.item-2 .content{
+    width: 100%;
+    height: 400px;
+    background: linear-gradient( to right, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0));
+}
+
+
+/* Categories */
+
+#categories-main {
+    background: var(--secondary-color);
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    width: 100%;
+}
+
+.categories .item-card{
+    width: 100%;
+    height: 100%;
+}
+
+.categories .catg-1,.catg-2,.catg-3,.catg-4 {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    padding: 20px 20px;
+}
+
+.categories img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Parallax Area*/
+
+#parallax-area {
+    width:100%;
+    color: var(--primary-color);
+    background: var(--secondary-color);
+}
+
+#parallax-area .grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-content > div {
+    height: 400px;
+    /* box-shadow: inset 0 0 10px; */
+}
+
+.grid-content .content-wrap {
+    margin-top: 50px;
+    padding: 0 40px;
+}
+
+.grid-content .box-1 {
+    order: 1;
+    background: url(https://www.macworld.co.uk/cmsdata/features/3669589/2019-imacs_thumb800.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+.grid-content .box-2 {
+    order: 2;
+    box-shadow: inset 0 0 20px;
+}
+
+.grid-content .box-3 {
+    order: 4;
+    background: url(https://www.gizbot.com/images/2019-02/microsoft-surface-pro-6_154936885030.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-content .box-4 {
+    order: 3;
+    box-shadow: inset 0 0 20px;
+}
+
+.grid-content .box-5 {
+    order: 5;
+    background: url(https://www.gizbot.com/images/2017-11/lenovo-ideapad-320_151134688760.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-content .box-6 {
+    order: 6;
+    box-shadow: inset 0 0 20px;
+}
+
+
+
+/* Media Queries */
+
+/* smartphones, iPhone, portrait 480x320 phones */ 
+/* @media (min-width:320px)  { 
+     
+} */
+
+
+/* big landscape tablets, laptops, and desktops */ 
+@media(max-width:925px) {
+
+    /* Categories */
+
+    .categories {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Parallax Area */
+
+    #parallax-area .grid-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-content > div {
+        min-height: 350px;
+        /* box-shadow: inset 0 0 10px; */
+    }
+    
+    .grid-content .content-wrap {
+        margin-top: 35px;
+        padding: 0 40px;
+    }
+
+    .grid-content .box-1 {
+        order: 1;
+    }
+    
+    .grid-content .box-2 {
+        order: 2;
+    }
+    
+    .grid-content .box-3 {
+        order: 3;
+    }
+    
+    .grid-content .box-4 {
+        order: 4;
+    }
+    
+    .grid-content .box-5 {
+        order: 5;
+    }
+    
+    .grid-content .box-6 {
+        order: 6;
+    }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media(max-width:500px)  { 
+    #menu-btn, .sign-in {
+        display: block;
+    }
+    
+    #menu-btn:hover,.sign-in:hover {
+        color: var(--tertiary-color);
+    }
+
+    .nav-bar ul {
+        display: none;
+    }
+
+    .nav-bar {
+        justify-content: center;
+    }
+
+    /* .main-menu-hidden {
+        display: flex;
+        top: 70px;
+    } */
+
+    .categories {  
+        grid-template-columns: 1fr;
+    }
+
+    input[type=text] {
+        width: 300px;
+        margin-left: 10px;
+    }
+}

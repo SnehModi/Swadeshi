@@ -1,0 +1,92 @@
+/* Footer */
+
+#about {
+    width: 100%;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    min-height: 400px;
+}
+
+#about a{
+    color: var(--secondary-color);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-main .content-left {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 40px;
+    width: 60%;  
+}
+
+.footer-main .content-right {
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 100px;
+    border-left: 1px solid;
+}
+
+.footer-main .content-right i{
+    margin-top: 40px;
+    margin-left: 20px;
+    transition: color 200ms ease;
+}
+
+.aboutlogo {
+    height: 250px ;
+    width: 250px;
+    display: inline-block;
+}
+
+.footer-main .content-right .fa-shopify{
+    color: var(--tertiary-color)
+}
+
+.footer-main .content-right .fb-icon:hover{
+    color: #4578e6;
+}
+
+.footer-main .content-right .twt-icon:hover{
+    color: #00c3ff;
+}
+
+.footer-main .content-right .link-icon:hover{
+    color: #0566d4;
+}
+
+/* Media Queries */
+
+
+/* big landscape tablets, laptops, and desktops */ 
+@media(max-width:925px) {
+
+    /* Footer */
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-main .content-left {
+        text-align: center;
+        width: 80%;
+        margin: 50px auto;
+        padding-bottom: 30px;
+        border-bottom: 1px solid;
+    }
+    
+    .footer-main .content-right {
+        text-align: center;
+        margin: 40px auto;
+        border-left: 0;
+    }
+
+    .footer-main .content-right i{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+}

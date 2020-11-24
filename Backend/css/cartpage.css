@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('navbar.css');
+@import url('footer.css');
+@import url('displayrating.css');
+
+:root {
+    --primary-color: #0E1116;
+    --secondary-color: #EFF6E0;
+    --tertiary-color: #E3E026;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+p {
+    padding: 1em 0;
+}
+
+ul {
+    list-style: ' - ';
+}
+
+a {
+    text-decoration: none;
+    color: rgb(6, 18, 124);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--tertiary-color);
+    font-size: 0.8em;
+    font-weight: 700;
+    text-decoration: none;
+    margin: .5em 0;
+    padding: 0.5em 2em;
+    border: 1px solid var(--tertiary-color);
+    transition: color,background 200ms ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+
+/* Header */
+
+#category-header {
+    margin: 40px 0;
+}
+
+/* Container */
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* Product grid */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 30px;
+}
+
+/* card */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border: .5px solid rgba(6, 18, 124, 0.08);
+    padding: 20px;
+}
+
+.card:hover {
+    border: .5px solid rgba(6, 18, 124, 0.5);
+    transition: border 200ms ease;
+}
+
+.card-detail {
+    margin-left: 40px;
+}
+
+#remove-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+
+/* load-more-btn */
+
+a#load-more-btn {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+
+@media(max-width:925px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(1,1fr);  
+    }
+
+    
+}
+
+
+@media(max-width:500px)  { 
+    #menu-btn, .sign-in {
+        display: block;
+    }
+    
+    #menu-btn:hover,.sign-in:hover {
+        color: var(--tertiary-color);
+    }
+
+    .nav-bar ul {
+        display: none;
+    }
+
+    .nav-bar {
+        justify-content: center;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3,1fr);  
+    }
+
+}
