@@ -10,17 +10,17 @@
         $search = mysqli_real_escape_string($conn,$_REQUEST['s']);
         $title = $search;
 
-        $query = "SELECT id,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $search . "%'  LIMIT 0,2";
+        $query = "SELECT id,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR shortDis LIKE '%" . $search . "%' LIMIT 0,2";
         $result = mysqli_query($conn, $query);
-        $products = mysqli_fetch_all($result);
+        $products = mysqli_fetch_all($result, MYSQL_ASSOC);
         
-        $query = "SELECT DISTINCT manufacturer FROM product_details WHERE category LIKE '%" . $search . "%'";
+        $query = "SELECT DISTINCT manufacturer FROM product_details WHERE category LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR shortDis LIKE '%" . $search . "%'";
         $result = mysqli_query($conn, $query);
-        $manufacturers = mysqli_fetch_all($result);
+        $manufacturers = mysqli_fetch_all($result, MYSQL_ASSOC);
     
-        $query = "SELECT DISTINCT price FROM product_details WHERE category LIKE '%" . $search . "%'";
+        $query = "SELECT DISTINCT price FROM product_details WHERE category LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR shortDis LIKE '%" . $search . "%'";
         $result = mysqli_query($conn, $query);
-        $prices = mysqli_fetch_all($result);
+        $prices = mysqli_fetch_all($result, MYSQL_ASSOC);
         $price_array = [];
         $starsTotal = 5;
     
@@ -146,7 +146,7 @@
         <?php foreach($categories as $category): 
              $query = "SELECT id,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $category . "%'  LIMIT 4";
              $result = mysqli_query($conn, $query);
-             $products = mysqli_fetch_all($result);
+             $products = mysqli_fetch_all($result, MYSQL_ASSOC);
         ?>
 
             <!-- Content -->

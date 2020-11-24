@@ -1,6 +1,7 @@
 <?php
     require_once('config/db.php');
     require_once('config/config.php');
+    session_start();
 ?>
 
 <div class="nav-block">
@@ -10,10 +11,10 @@
     </div>
 
     <div class="sign-in">
-        <?php if(isset($_SESSION['user'])): ?>  
-            <a href="">Logout</a>       
+        <?php if(isset($_SESSION['uid'])): ?>  
+            <a href="<?php echo ROOT_URL . 'index.php?logout' ?>">Logout</a>       
         <?php else: ?>
-            <a href="">Login</a> 
+            <a href="<?php echo ROOT_URL . 'login.php' ?>">Login</a> 
         <?php endif; ?>
     </div>
 
@@ -29,20 +30,26 @@
             </form>
         </li>
         <li>
-            <?php if(isset($_SESSION['user'])): ?>  
-                <a href="">My Account</a>       
+            <?php if(isset($_SESSION['uid'])): ?>  
+                <a href="<?php echo ROOT_URL . 'index.php?logout' ?>">Logout</a>       
             <?php else: ?>
-                <a href="">Login</a> 
+                <a href="<?php echo ROOT_URL . 'login.php' ?>">Login</a> 
             <?php endif; ?>
         </li>
         <li>
             <a href="<?php echo ROOT_URL . 'categorypage.php' ?>">Categories</a>
         </li>
         <li>
-            <a href="<?php echo ROOT_URL . 'cartpage.php' ?>">My Cart</a>
+            <?php if(isset($_SESSION['uaccess']) && $_SESSION['uaccess']=='Business'): ?>  
+                <a href="<?php echo ROOT_URL . 'product_verfication.php' ?>">Sell Products</a>       
+            <?php else: ?>
+                <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
+                    <a href="<?php echo ROOT_URL . 'cartpage.php' ?>">My Cart</a>
+                </a>
+            <?php endif; ?>
         </li>
         <li>
-            <a href="">About us</a>
+            <a href="<?php echo ROOT_URL . 'aboutus.php' ?>">About us</a>
         </li>
     </ul>
 
@@ -62,20 +69,24 @@
 
             <ul class="main-menu">
                 <li>
-                    <a href="#search" alt="search">
-                        <i class="fas fa-search fa-1x"></i>
-                    </a>
+                    <a href="<?php echo ROOT_URL . 'aboutus.php' ?>">About us</a>
                 </li>
                 <li>
-                    <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
+                    <?php if(isset($_SESSION['uid'])): ?>  
+                        <a href="<?php echo ROOT_URL . 'index.php?logout' ?>">Logout</a>       
+                    <?php else: ?>
+                        <a href="<?php echo ROOT_URL . 'login.php' ?>">Login</a>
+                    <?php endif; ?>
                 </li>
                 <li>
-                    <a href="<?php echo ROOT_URL . 'myaccount.php' ?>">
-                        <i class="fas fa-user-circle fa-1x"></i>
-                    </a>
-                </li>
+                    <?php if(isset($_SESSION['uaccess']) && $_SESSION['uaccess']=='Business'): ?>  
+                        <a href="<?php echo ROOT_URL . 'product_verfication.php' ?>">Sell</a>       
+                    <?php else: ?>
+                        <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
+                            <i class="fas fa-shopping-cart fa-1x"></i>
+                        </a>
+                    <?php endif; ?>
+                </li> 
             </ul>
         </div>
     </nav>

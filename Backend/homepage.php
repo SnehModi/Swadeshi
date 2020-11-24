@@ -12,7 +12,7 @@
  
     $query = "SELECT id,images,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $search . "%'";
     $result = mysqli_query($conn, $query);
-    $products = mysqli_fetch_all($result);
+    $products = mysqli_fetch_all($result, MYSQL_ASSOC);
     $json=json_encode($products,true);
 
     mysqli_free_result($result);

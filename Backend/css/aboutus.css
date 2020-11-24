@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('navbar.css');
+@import url('footer.css');
+
+:root {
+  --primary-color: #0E1116;
+  --secondary-color: #EFF6E0;
+  --tertiary-color: #E3E026;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  max-height: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: indian_calligraphy;
+}
+
+.title {
+  color: #4d3319;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: indian_calligraphy;
+}
+
+
+
+body{
+  background: url("../images/background.jpg") no-repeat center center/cover;
+  margin: 0;
+  padding: 0;
+}
+
+#btn {
+  display: block;
+  background: var(--primary-color);
+  color: var(--tertiary-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+  margin: 30px auto ;
+  padding: 20px 20px;
+  border: 1px solid var(--tertiary-color);
+  transition: color,background 200ms ease;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 30%;
+  padding: 0 10px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding:16px;
+  text-align: center;
+  background-image: url("../images/old-brown-paper-texture-image-900x741.jpg");
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,100);
+}
+
+@font-face {
+  font-family: indian_calligraphy;
+  src: url(SAMARN__.ttf);
+}
+
+a {
+  cursor: pointer;
+}
+
+.cal{
+  font-family: indian_calligraphy;
+  font-size: 70px;
+  font-weight: 600;
+  color: wheat;
+  text-align: center;
+}
+
+.write{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  margin: 30px;
+}
+
+video{
+  width: 100%;
+  height: auto;
+}
+
+.right_section{
+  background-image: url("../images/old-brown-paper-texture-image-900x741.jpg");
+}
+
+#companies{
+  width: 80%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 30px;
+  justify-content: center;
+}
+
+.company {
+  width: 80%;
+  padding: 20px;
+}
+
+.company h4{
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: antiquewhite;
+}
+.company img {
+  width: 60%;
+  height: auto;
+}
+
+
+
+@media(max-width:925px) {
+  .main {
+    flex-direction: column;
+  }
+}
