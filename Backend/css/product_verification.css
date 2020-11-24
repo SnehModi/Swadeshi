@@ -1,0 +1,14 @@
+.input-box {
+    border-radius: 20px 5px !important;
+    padding: 10px !important;
+    margin: 10px 0 !important;
+    width: 30% !important;
+    border: 1px solid #999 !important;
+    outline: none !important;
+}
+
+hr {
+    width: 70%;
+    margin: 10px auto;
+    
+}

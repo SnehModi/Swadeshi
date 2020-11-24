@@ -12,15 +12,15 @@
 
         $query = "SELECT id,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $search . "%'  LIMIT 0,2";
         $result = mysqli_query($conn, $query);
-        $products = mysqli_fetch_all($result, MYSQL_ASSOC);
+        $products = mysqli_fetch_all($result);
         
         $query = "SELECT DISTINCT manufacturer FROM product_details WHERE category LIKE '%" . $search . "%'";
         $result = mysqli_query($conn, $query);
-        $manufacturers = mysqli_fetch_all($result, MYSQL_ASSOC);
+        $manufacturers = mysqli_fetch_all($result);
     
         $query = "SELECT DISTINCT price FROM product_details WHERE category LIKE '%" . $search . "%'";
         $result = mysqli_query($conn, $query);
-        $prices = mysqli_fetch_all($result, MYSQL_ASSOC);
+        $prices = mysqli_fetch_all($result);
         $price_array = [];
         $starsTotal = 5;
     
@@ -146,7 +146,7 @@
         <?php foreach($categories as $category): 
              $query = "SELECT id,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $category . "%'  LIMIT 4";
              $result = mysqli_query($conn, $query);
-             $products = mysqli_fetch_all($result, MYSQL_ASSOC);
+             $products = mysqli_fetch_all($result);
         ?>
 
             <!-- Content -->

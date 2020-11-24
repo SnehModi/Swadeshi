@@ -21,7 +21,7 @@
 
         $query = "SELECT id,name,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE id IN " . $data;
         $result = mysqli_query($conn, $query);
-        $products = mysqli_fetch_all($result, MYSQL_ASSOC);
+        $products = mysqli_fetch_all($result);
         
         $starsTotal = 5;
     
