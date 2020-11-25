@@ -19,7 +19,7 @@
     <body>
         <section class="signup-section">
 
-            <img id="logo" src="./swadeshi_logo.png">
+            <img id="logo" src="images/swadeshi_logo.png">
 
             <h1>Sign-Up</h1>
             

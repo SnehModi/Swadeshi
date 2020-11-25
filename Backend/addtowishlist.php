@@ -2,17 +2,22 @@
     require_once('config/db.php');
     require_once('config/config.php');
     session_start();
-    if(isset($_SESSION['userId'])){
+    if(isset($_SESSION['uid'])){
             
-            $userId = $_SESSION['userId'];
+            $userId = $_SESSION['uid'];
             $prodId = mysqli_real_escape_string($conn, $_POST['prodId']);
-            $query = "SELECT wish_list FROM user_details WHERE id=" . $userId;
+            $query = "SELECT wish_list FROM user WHERE id=" . $userId;
             $result = mysqli_query($conn, $query);
             $wishlist = mysqli_fetch_assoc($result);
-            $wishlist = explode(',', $wishlist['wishlist']);
-            array_push($wishlist, $prodId);
-            $wishlist = implode(',', $wishlist);
-
+            if($wishlist['wishlist']!=NULL){
+                $wishlist = explode(',', $wishlist['wishlist']);
+                array_push($wishlist, $prodId);
+                $wishlist = implode(',', $wishlist);
+            } else {
+                $wishlist = $prodId;
+            }
+            
+            
             $query = "INSERT INTO user_details(wish_list) VALUES (?) WHERE id=" . $userId;
             if($stmt = mysqli_prepare($conn, $query)){
                 // Bind variables to the prepared statement as parameters

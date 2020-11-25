@@ -1,8 +1,8 @@
 <?php 
 
     if (isset($_SESSION['name'])) {
-    $_SESSION['msg'] = "Already Logged In !";
-    header('location: index.php');
+        $_SESSION['msg'] = "Already Logged In !";
+        header('location: index.php');
     }
 
     include('./config/db.php');
@@ -21,7 +21,7 @@
     <body>
         <section class="signup-section">
 
-            <img id="logo" src="./swadeshi_logo.png">
+            <img id="logo" src="images/swadeshi_logo.png">
 
             <h1>Log-In</h1>
             

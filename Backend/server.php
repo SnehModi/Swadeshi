@@ -71,8 +71,9 @@
         $results = mysqli_query($conn, $query);
         $user = mysqli_fetch_assoc($results);
         if (mysqli_num_rows($results) == 1) {
-          $_SESSION['name'] = $user['name'];
-          $_SESSION['access'] = $user['account'];
+          $_SESSION['uid'] = $user['id'];
+          $_SESSION['uname'] = $user['name'];
+          $_SESSION['uaccess'] = $user['account'];
           $_SESSION['success'] = "Logged in : ";
           header('location: index.php');
         }else {

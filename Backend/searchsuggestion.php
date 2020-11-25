@@ -11,15 +11,21 @@
     $pattern = '/' . $search .'/i';
     // echo $pattern;
 
-    $query = "SELECT category FROM product_details WHERE category LIKE '%" . $search . "%'  LIMIT 8";
+    $query = "SELECT category,name,shortDis FROM product_details WHERE category LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR shortDis LIKE '%" . $search . "%' LIMIT 8";
     $result = mysqli_query($conn, $query);
     $suggestions = mysqli_fetch_all($result, MYSQL_ASSOC);
     $suggest = [];
     foreach($suggestions as $suggestion){
         $list = explode(',', $suggestion['category']);
-        // print_r($list);
         $list = preg_grep($pattern, $list);
-        // print_r($list);
+        $suggest = array_merge($suggest, $list);
+
+        $list = explode(',', $suggestion['name']);
+        $list = preg_grep($pattern, $list);
+        $suggest = array_merge($suggest, $list);
+
+        $list = explode(',', $suggestion['shortDis']);
+        $list = preg_grep($pattern, $list);
         $suggest = array_merge($suggest, $list);
     }
 

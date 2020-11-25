@@ -2,8 +2,7 @@
     // id,images,shortDis,rating,review,manufacturer,thumbnail,price
     require_once('config/db.php');
     require_once('config/config.php');
-    session_start();
-    $_SESSION['userId'] = 2;
+
     $file = 'images/';
     if(isset($_REQUEST['id'])){
         $id = mysqli_real_escape_string($conn,$_REQUEST['id']);
@@ -14,7 +13,18 @@
     $query = "SELECT * FROM product_details WHERE id=" . $id;
     $result = mysqli_query($conn, $query);
     $product = mysqli_fetch_assoc($result);
-    $images = explode(',', $product['images']);
+    if($product['images']==""){
+        $images[0] = 'Packed-Products-Icon.png';
+        $images[1] = 'Packed-Products-Icon.png';
+        $images[2] = 'Packed-Products-Icon.png';
+        $images[3] = 'Packed-Products-Icon.png';
+    } else {
+        $images = explode(',', $product['images']);
+        for($i=count($images); $i<=3; $i++){
+            $images[$i] = 'Packed-Products-Icon.png';
+        }
+    }
+    
     $tags = explode(',', $product['tags']);
     $features = explode('.', $product['longDis']);
     $avail = $product['quantity']>5 ? 'In Stock': 'Out of Stock';
@@ -54,6 +64,17 @@
             <section class="prod-img">
                 <img src=<?php echo $file . $images[0] ?> alt="" class="main-img">
                 <div class="all-img">
+                    <?php //foreach($images as $image):
+                        // if (filter_var($image, FILTER_VALIDATE_URL)) {
+                        //     echo `<img src='$image' class="sm-img">`;
+                        // } elseif(filter_var($file.$image, FILTER_VALIDATE_URL)) {
+                        //     $url = $file . $image;
+                        //     echo `<img src='$url' class="sm-img">`;
+                        // } else {
+                        //     $url = $file .  "Packed-Products-Icon.png";
+                        //     echo `<img src='$file .' class="sm-img">`;
+                        // }
+                    ?>
                     <img src=<?php echo $file . $images[0] ?> class="sm-img">
                     <img src=<?php echo $file . $images[1] ?> class="sm-img">
                     <img src=<?php echo $file . $images[2] ?> class="sm-img">
