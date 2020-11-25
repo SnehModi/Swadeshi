@@ -1,27 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Contributers>
-  <company>
-    <name>Cello</name>
-    <image>cello.png</image>
-  </company>
-  <company>
-    <name>Classmate</name>
-    <image>classmate.png</image>
-  </company>
-  <company>
-    <name>Dabur</name>
-    <image>dabur.jpg</image>
-  </company>
-  <company>
-    <name>Godrej</name>
-    <image>Godrej.jpg</image>
-  </company>
-  <company>
-    <name>Reliance</name>
-    <image>reliance.jpg</image>
-  </company>
-  <company>
-    <name>Unilever</name>
-    <image>unilever.jpg</image>
-  </company>
-</Contributers>
+<?xml-stylesheet type="text/xsl" href="companies.xsl"?>
+<companies>
+
+<category>
+<name>Indian Electronics Companies</name>
+<description>Godrej,
+Micromax,
+Voltas,
+Reliance,
+Lava</description>
+</category>
+
+<category>
+<name>Indian Automobile Companies</name>
+<description>Tata Motors,
+Mahindra and Mahindra,
+Renault,
+Hero Motors,
+Bajaj,
+TVS Bikes</description>
+</category>
+
+<category>
+<name>Indian Textiles (Garments) Companies</name>
+<description>Raymond,
+Park Avenue,
+Bombay Dyeing,
+Rupa and Company,
+Cambridge</description>
+</category>
+
+<category>
+<name>Indian Telecom Operators</name>
+<description>Airtel,
+Idea,
+Reliance,
+BSNL</description>
+</category>
+
+<category>
+<name>Indian Dairy Products Companies</name>
+<description>Amul,
+Dukes India,
+Mother Dairy,
+Milk Mantra,
+Kwality Ltd.,
+Creambell</description>
+</category>
+
+<category>
+<name>Indian Grocery Products Companies</name>
+<description>Tata,
+Britannia,
+Patanjali,
+Himalaya,
+Parle</description>
+</category>
+
+<category>
+<name>Indian Beverage Companies</name>
+<description>Kissan,
+Rasna,
+Rooh Afza,
+Frooti,
+Keventers’</description>
+</category>
+
+<category>
+<name>Indian Online Shopping Companies</name>
+<description>Tata Cliq,
+Snapdeal,
+Shopclues,
+Paytm,
+Home Shop 18</description>
+</category>
+
+<category>
+<name>Indian Stationery Companies</name>
+<description>ITC Classmate,
+Navneet Education,
+Linc,
+Cello,
+Montex</description>
+</category>
+
+<category>
+<name>Indian Household Products Companies</name>
+<description>Hindustan Unilever,
+Dabur India,
+Godrej Consumer Prod.,
+Emami India,
+PandG Hygiene</description>
+</category>
+</companies>
