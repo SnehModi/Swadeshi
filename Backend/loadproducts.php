@@ -70,7 +70,16 @@
     $products = mysqli_fetch_all($result, MYSQL_ASSOC);
 
     for($i=0; $i<count($products); $i++){
-        $products[$i]['thumbnail'] = ROOT_URL . $file . $products[$i]['thumbnail'];
+        $url = $products[$i]['thumbnail']; 
+        $headers = @get_headers($url); 
+        if($headers && strpos( $headers[0], '200')) { 
+            $products[$i]['thumbnail'] = $products[$i]['thumbnail'];
+        } 
+        elseif(file_exists($file . $url)) { 
+            $products[$i]['thumbnail'] = ROOT_URL . $file . $products[$i]['thumbnail'];
+        } else {
+            $products[$i]['thumbnail'] = ROOT_URL . $file . "Packed-Products-Icon.png";
+        }
     }
 
     $json = json_encode($products,true);

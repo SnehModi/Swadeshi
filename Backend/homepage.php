@@ -114,12 +114,12 @@
                 <?php for($i=1;$i<=5;$i=$i+2):?>
                     <div class="<?php echo 'box-' . intval($i) ?>"></div>
                     <div class="<?php echo 'box-' . intval($i+1) ?>">
-                    <div class="content-wrap">
-                        <h2>Product1</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vero ullam a nihil reiciendis totam voluptatem nemo dolorem blanditiis at!</p>
-                        <a href="<?php echo ROOT_URL . 'categorypage.php?s=Electronics' ?>" class="btn">Shop Now</a>
+                        <div class="content-wrap">
+                            <h2>Product</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vero ullam a nihil reiciendis totam voluptatem nemo dolorem blanditiis at!</p>
+                            <a href="<?php echo ROOT_URL . 'categorypage.php?s=Electronics' ?>" class="btn">Shop Now</a>
+                        </div>
                     </div>
-                </div>
                 <?php endfor; ?>
             </div>
         </section>

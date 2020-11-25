@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-@import url('navbar.css');
-@import url('footer.css');
+
 
 :root {
   --primary-color: #0E1116;
@@ -14,6 +13,10 @@
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+
+  body {
+    font-size: 12px;
   }
 }
 
@@ -161,5 +164,9 @@ video{
 @media(max-width:925px) {
   .main {
     flex-direction: column;
+  }
+
+  #companies{
+    grid-template-columns: repeat(2,1fr);
   }
 }

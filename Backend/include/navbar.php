@@ -80,7 +80,7 @@
                 </li>
                 <li>
                     <?php if(isset($_SESSION['uaccess']) && $_SESSION['uaccess']=='Business'): ?>  
-                        <a href="<?php echo ROOT_URL . 'product_verfication.php' ?>">Sell</a>       
+                        <a href="<?php echo ROOT_URL . 'product_verification.php' ?>">Sell</a>       
                     <?php else: ?>
                         <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
                             <i class="fas fa-shopping-cart fa-1x"></i>

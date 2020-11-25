@@ -103,12 +103,22 @@
                 <div class="product-grid">
 
                 <?php foreach($products as $product): 
-                    $starPercentage = ($product['rating'] / $starsTotal) * 100;
-                    $starPercentageRounded = round($starPercentage / 10) * 10;
+                        $starPercentage = ($product['rating'] / $starsTotal) * 100;
+                        $starPercentageRounded = round($starPercentage / 10) * 10;
+                        $url = $product['thumbnail']; 
+                        $headers = @get_headers($url); 
+                        if($headers && strpos( $headers[0], '200')) { 
+                            $thumbnail = $product['thumbnail'];
+                        } 
+                        elseif(file_exists($file . $product['thumbnail'])) { 
+                            $thumbnail = $file . $product['thumbnail'];
+                        } else {
+                            $thumbnail = $file . "Packed-Products-Icon.png";
+                        }
                     ?>
                     <div class="card">
                         <a href=<?php echo ROOT_URL . "productpage.php?id=" . $product['id'] ?>>
-                            <img src=<?php echo $file . $product['thumbnail'] ?> width="196px" height="196px">
+                            <img src=<?php echo $thumbnail ?> width="196px" height="196px">
                             <p class="description"><?php echo $product['shortDis'] ?></p>
                         </a>
                         <p>by <span class="product-company"><?php echo $product['manufacturer'] ?></span></p>
