@@ -57,7 +57,7 @@
       	}
       }
       
-      if ($verify < 2) { array_push($errors, "Verification Unsuccessful - This product cannot be sold :("); }
+      if ($verify < 2) { array_push($errors, "Verification Unsuccessful - Sorry this product cannot be sold :("); }
 
       // Finally, register user if there are no errors in the form
       if (count($errors) == 0) {
@@ -92,7 +92,9 @@
 
         <form action="product_verification.php" method="POST">
 
-        	<?php include './errors.php'; ?>
+            <h4 id="error">
+                <?php include './errors.php'; ?>
+            </h4>
 
             <section class="">
                 <input class="input-box" name="product_name" type="text" placeholder="Product Name" minlength="3" maxlength="20" required></input><br>

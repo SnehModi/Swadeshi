@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../images/background.jpg");
+    background-image: url("background.jpg");
     background-size: cover;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -13,7 +13,7 @@ body {
 
 .signup-section {
     width: 400px;
-    background-image: url("../images/old-brown-paper-texture-image-900x741.jpg");
+    background-image: url("old-brown-paper-texture-image-900x741.jpg");
     padding: 20px;
     text-align: center;
     margin: 30px auto;
