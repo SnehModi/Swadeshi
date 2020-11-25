@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="companies.xsl"?>
+<<<<<<< HEAD
 <companies>
 
 <category>
@@ -93,3 +94,31 @@ Emami India,
 PandG Hygiene</description>
 </category>
 </companies>
+=======
+<Contributers>
+  <company>
+    <name>Cello</name>
+    <image>cello.png</image>
+  </company>
+  <company>
+    <name>Classmate</name>
+    <image>classmate.png</image>
+  </company>
+  <company>
+    <name>Dabur</name>
+    <image>dabur.jpg</image>
+  </company>
+  <company>
+    <name>Godrej</name>
+    <image>Godrej.jpg</image>
+  </company>
+  <company>
+    <name>Reliance</name>
+    <image>reliance.jpg</image>
+  </company>
+  <company>
+    <name>Unilever</name>
+    <image>unilever.jpg</image>
+  </company>
+</Contributers>
+>>>>>>> d919e6da9779dcd28aefa247f214eb98fc46c26b

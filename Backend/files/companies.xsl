@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <body style="font-family:sans-serif; font-size:24pt; background-color:#4d3319">
@@ -18,3 +19,31 @@
 
 </body>
 </html>
+=======
+<?xml version="1.0"?>
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <body>
+    <h2>Contributers</h2>
+    <table border="1">
+      <tr bgcolor="#9acd32">
+        <th>Name</th>
+        <th>Image file</th>
+      </tr>
+      <xsl:for-each select="Contributers/company">
+        <tr>
+          <td><xsl:value-of select="name"/></td>
+          <td><xsl:value-of select="image"/></td>
+        </tr>
+      </xsl:for-each>
+    </table>
+  </body>
+  </html>
+</xsl:template>
+
+</xsl:stylesheet>
+>>>>>>> d919e6da9779dcd28aefa247f214eb98fc46c26b
