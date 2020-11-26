@@ -66,6 +66,7 @@ a {
     cursor: pointer;
     padding: 10px 20px;
     transition: padding 200ms ease;
+    z-index: 10;
 }
 
 .filter:hover {
@@ -191,7 +192,11 @@ a#load-more-btn {
 }
 
 
-@media(max-width:500px)  { 
+@media(max-width:500px)  {
+    body {
+        font-size: 12px;
+    }
+
     #menu-btn, .sign-in {
         display: block;
     }
@@ -209,7 +214,7 @@ a#load-more-btn {
     }
 
     .product-grid {
-        grid-template-columns: repeat(3,1fr);  
+        grid-template-columns: repeat(1,1fr);  
     }
 
 }

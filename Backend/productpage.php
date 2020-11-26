@@ -13,17 +13,27 @@
     $query = "SELECT * FROM product_details WHERE id=" . $id;
     $result = mysqli_query($conn, $query);
     $product = mysqli_fetch_assoc($result);
-    if($product['images']==""){
-        $images[0] = 'Packed-Products-Icon.png';
-        $images[1] = 'Packed-Products-Icon.png';
-        $images[2] = 'Packed-Products-Icon.png';
-        $images[3] = 'Packed-Products-Icon.png';
-    } else {
-        $images = explode(',', $product['images']);
-        for($i=count($images); $i<=3; $i++){
-            $images[$i] = 'Packed-Products-Icon.png';
+    
+    $images = [];
+    $prodimages = explode(',', $product['images']);
+    // echo print_r($prodimages);
+    for($i=0; $i<count($prodimages); $i++){
+        $url = $prodimages[$i]; 
+        $headers = @get_headers($url); 
+        if($headers && strpos( $headers[0], '200')) { 
+            $images[$i] =  $url;
+        } 
+        elseif(file_exists($file . $url)) { 
+            $images[$i] = $file . $url ;
+        } else {
+            $images[$i] = $file . "Packed-Products-Icon.png";
         }
     }
+
+    for($i=count($images); $i<4; $i++){
+        $images[$i] = $file . 'Packed-Products-Icon.png';
+    }
+    
     
     $tags = explode(',', $product['tags']);
     $features = explode('.', $product['longDis']);
@@ -62,23 +72,12 @@
     <div class="container">
         <div class="wardrob">
             <section class="prod-img">
-                <img src=<?php echo $file . $images[0] ?> alt="" class="main-img">
+                <img src=<?php echo $images[0] ?> alt="" class="main-img">
                 <div class="all-img">
-                    <?php //foreach($images as $image):
-                        // if (filter_var($image, FILTER_VALIDATE_URL)) {
-                        //     echo `<img src='$image' class="sm-img">`;
-                        // } elseif(filter_var($file.$image, FILTER_VALIDATE_URL)) {
-                        //     $url = $file . $image;
-                        //     echo `<img src='$url' class="sm-img">`;
-                        // } else {
-                        //     $url = $file .  "Packed-Products-Icon.png";
-                        //     echo `<img src='$file .' class="sm-img">`;
-                        // }
-                    ?>
-                    <img src=<?php echo $file . $images[0] ?> class="sm-img">
-                    <img src=<?php echo $file . $images[1] ?> class="sm-img">
-                    <img src=<?php echo $file . $images[2] ?> class="sm-img">
-                    <img src=<?php echo $file . $images[3] ?> class="sm-img">
+                    <img src=<?php echo $images[0] ?> class="sm-img">
+                    <img src=<?php echo $images[1] ?> class="sm-img">
+                    <img src=<?php echo $images[2] ?> class="sm-img">
+                    <img src=<?php echo $images[3] ?> class="sm-img">
                 </div>
             </section>
     

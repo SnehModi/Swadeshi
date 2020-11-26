@@ -332,6 +332,11 @@ a {
 
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media(max-width:500px)  { 
+
+    body {
+        font-size: 12px;
+    }
+
     #menu-btn, .sign-in {
         display: block;
     }
@@ -347,11 +352,6 @@ a {
     .nav-bar {
         justify-content: center;
     }
-
-    /* .main-menu-hidden {
-        display: flex;
-        top: 70px;
-    } */
 
     .categories {  
         grid-template-columns: 1fr;

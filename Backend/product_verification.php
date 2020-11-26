@@ -2,6 +2,7 @@
 
 	session_start();
 
+
 	// if (!isset($_SESSION['uname'])) {
   	// $_SESSION['msg'] = "You must log in first";
   	// header('location: login.php');
@@ -11,6 +12,17 @@
   	// 	$_SESSION['msg'] = "You do not have access to Product Verification page.";
   	// 	header('location: index.php');
   	// } 
+
+	if (!isset($_SESSION['name'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	    header('location: login.php');
+  	}
+
+  	if ($_SESSION['access'] == 'Customer') {
+  		$_SESSION['msg'] = "You do not have access to Product Verification page.";
+  		header('location: index.php');
+  	} 
+
 
 	include './config/db.php';
 
@@ -28,7 +40,7 @@
     if (isset($_POST['verify'])) {
       // receive all input values from the form
       $product_name = mysqli_real_escape_string($conn, $_POST['product_name']);
-      $product_url = mysqli_real_escape_string($conn, $_POST['product_url']);
+      $product_url = $_POST['product_url'];
       $product_category = mysqli_real_escape_string($conn, $_POST['product_category']);
       $product_price = mysqli_real_escape_string($conn, $_POST['product_price']);
       $product_quantity = mysqli_real_escape_string($conn, $_POST['product_quantity']);
@@ -61,9 +73,9 @@
 
       // Finally, register user if there are no errors in the form
       if (count($errors) == 0) {
-
-        $query = "INSERT INTO product_details(name,price,quantity,manufacturer,primaryCategory,images)
-            VALUES('$product_name','$product_price','$product_quantity','$manufacturer','$product_category','$product_url')";
+        $thumbnail = explode(',', $product_url)[0];
+        $query = "INSERT INTO product_details(name,price,quantity,manufacturer,primaryCategory,thumbnail,images)
+            VALUES('$product_name','$product_price','$product_quantity','$manufacturer','$product_category','$thumbnail','$product_url')";
         mysqli_query($conn, $query);
         // $_SESSION['name'] = $name;
         // $_SESSION['success'] = "You are now logged in";
