@@ -13,21 +13,10 @@
   	// 	header('location: index.php');
   	// } 
 
-	if (!isset($_SESSION['name'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	    header('location: login.php');
-  	}
-
-  	if ($_SESSION['access'] == 'Customer') {
-  		$_SESSION['msg'] = "You do not have access to Product Verification page.";
-  		header('location: index.php');
-  	} 
-
-
 	include './config/db.php';
 
     // initializing variables
-    $manufacturer = $_SESSION['name'];
+    $manufacturer = $_SESSION['uname'];
     $product_name = "";
     $product_url = "";
     $product_category = "";
@@ -79,7 +68,7 @@
         mysqli_query($conn, $query);
         // $_SESSION['name'] = $name;
         // $_SESSION['success'] = "You are now logged in";
-        // header('location: index.php');
+        header('location: index.php');
       }
     }
    

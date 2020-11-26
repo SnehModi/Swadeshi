@@ -47,7 +47,7 @@
         </li>
         <li>
             <?php if(isset($_SESSION['uaccess']) && $_SESSION['uaccess']=='Business'): ?>  
-                <a href="<?php echo ROOT_URL . 'product_verfication.php' ?>">Sell Products</a>       
+                <a href="<?php echo ROOT_URL . 'product_verification.php' ?>">Sell Products</a>       
             <?php else: ?>
                 <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
                     <a href="<?php echo ROOT_URL . 'cartpage.php' ?>">My Cart</a>
