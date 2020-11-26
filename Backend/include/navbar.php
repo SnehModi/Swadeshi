@@ -2,6 +2,12 @@
     require_once('config/db.php');
     require_once('config/config.php');
     session_start();
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['name']);
+        header("location: login.php");
+    }
 ?>
 
 <div class="nav-block">
@@ -80,7 +86,7 @@
                 </li>
                 <li>
                     <?php if(isset($_SESSION['uaccess']) && $_SESSION['uaccess']=='Business'): ?>  
-                        <a href="<?php echo ROOT_URL . 'product_verfication.php' ?>">Sell</a>       
+                        <a href="<?php echo ROOT_URL . 'product_verification.php' ?>">Sell</a>       
                     <?php else: ?>
                         <a href="<?php echo ROOT_URL . 'cartpage.php' ?>" alt="cart">
                             <i class="fas fa-shopping-cart fa-1x"></i>

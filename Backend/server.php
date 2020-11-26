@@ -46,8 +46,8 @@
 
         $query = "INSERT INTO user(name,email,password,account)VALUES('$name','$email','$password','$account')";
         mysqli_query($conn, $query);
-        $_SESSION['name'] = $name;
-        $_SESSION['access'] = $account;
+        $_SESSION['uname'] = $name;
+        $_SESSION['uaccess'] = $account;
         $_SESSION['success'] = "You are now logged in";
         header('location: index.php');
       }

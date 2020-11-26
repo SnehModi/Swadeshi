@@ -2,15 +2,15 @@
 
 	session_start();
 
-	if (!isset($_SESSION['name'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  	}
+	// if (!isset($_SESSION['uname'])) {
+  	// $_SESSION['msg'] = "You must log in first";
+  	// header('location: login.php');
+  	// }
 
-  	if ($_SESSION['access'] == 'Customer') {
-  		$_SESSION['msg'] = "You do not have access to Product Verification page.";
-  		header('location: index.php');
-  	} 
+  	// if ($_SESSION['uaccess'] == 'Customer') {
+  	// 	$_SESSION['msg'] = "You do not have access to Product Verification page.";
+  	// 	header('location: index.php');
+  	// } 
 
 	include './config/db.php';
 

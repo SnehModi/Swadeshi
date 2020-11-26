@@ -25,11 +25,11 @@
             
             <form name="signup_form" onsubmit="return validateForm()" action="signup.php" method="POST">
                 <?php include 'errors.php'; ?>
-                <input type="text" class="input-box" name="name" placeholder="Name" value="<?php echo $name; ?>" minlength="3" maxlength="20" ></input><br>
+                <input type="text" class="input-box" name="name" placeholder="Name" value="<?php echo $name; ?>" minlength="3" maxlength="20" required ></input><br>
                 <div class="error" id="nameErr"></div>
-                <input type="email" class="input-box" name="email" placeholder="Email" value="<?php echo $email; ?>"  ></input><br>
+                <input type="email" class="input-box" name="email" placeholder="Email" value="<?php echo $email; ?>" required ></input><br>
                 <div class="error" id="emailErr"></div>
-                <input type="password" class="input-box" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" ></input><br>
+                <input type="password" class="input-box" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></input><br>
                 <div class="error" id="passwordErr"></div>
                 <input type="radio" class="account-type" name="account-type" value="Customer">Customer</input>
                 <input type="radio" class="account-type" name="account-type" value="Business">Business</input>

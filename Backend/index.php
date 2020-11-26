@@ -1,64 +1,133 @@
 <?php
 
-	session_start();
+    require_once('config/db.php');
+    require_once('config/config.php');
+    $search = "";
+    $title = "All Products";
+    $file = 'images/';
+    if(isset($_REQUEST['s'])){
+        $search = mysqli_real_escape_string($conn,$_REQUEST['s']);
+        $title = $search;
+    }
+ 
+    $query = "SELECT id,images,shortDis,rating,review,manufacturer,thumbnail,price FROM product_details WHERE category LIKE '%" . $search . "%'";
+    $result = mysqli_query($conn, $query);
+    $products = mysqli_fetch_all($result, MYSQL_ASSOC);
+    $json=json_encode($products,true);
 
-	if (!isset($_SESSION['name'])) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: homepage.php');
-  	}
-
-	if (isset($_GET['logout'])) {
-		unset($_SESSION['name']);
-		session_destroy();
-		header("location: homepage.php");
-	}
-	
-	header('location: homepage.php');
-
-	include('./config/db.php');
-
-	// query for all values from railway
-	$sql = 'SELECT * FROM user';
-
-	// make query & get result
-	$result = mysqli_query($conn, $sql);
-
-	// fetch the resulting rows as an array
-	$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	
-	print_r($users);
+    mysqli_free_result($result);
+    mysqli_close($conn);
 
 ?>
 
 <!DOCTYPE html>
-<html>
-	
-	<nav>
-        <h3 class='navbar'><a href="./homepage.php">SNEH MODI</a></h3>
-        <button class='navbar btn'><a href="./signup.php">Hello</a></button>
-    </nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/Font-Awesome/all.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <?php include('include/navbar.php'); ?>
 
-	<h3>
-		<?php echo $_SESSION['name']; ?>
-	</h3>
-	
-	<!-- notification message -->
-  	<?php if (isset($_SESSION['msg'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['msg']; 
-          	unset($_SESSION['msg']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
+    <!-- Header Showcase -->
+    <header id="showcase">
+        <div class="slider">
+            <div class="slide current"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <div class="content-wrap">
+            <h1 class="heading">Namaste!</h1>
+            <p class="firstp">Looking to be a part of Atmanirbhar bharat?</p>
+            <p class="firstp">You've come to the right place!</p> 
+            <p class="firstp">Find products that are all MADE IN INDIA</p>   
+            <a href="<?php echo ROOT_URL . 'categorypage.php' ?>" class="btn">Explore</a>
+        </div>  
+    </header>
 
+    <!-- Main Area -->
+    <main id="main">
 
-	<!-- logged in user information -->
-    <?php  if (isset($_SESSION['name'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['name']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
-	
+        <!-- Top Products -->
+        <section class="top-products">
+            <div class="item item-1">
+                <div class="content">
+                    <h2>Cloths and Garments</h2>
+                    <p>Imagine the next level of Fashion.</p>
+                    <a href="<?php echo ROOT_URL . 'categorypage.php?s=Cloths and Garments' ?>" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section id="categories-main">
+            <div class="categories">
+                <?php for($i=0;$i<4;$i++):?>
+                    <div class="catg-1">
+                        <figure class="item-card">
+                            <a href="<?php echo ROOT_URL . 'categorypage.php?s=Cameras' ?>">
+                                <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                                <figcaption>Cameras</figcaption>
+                            </a>   
+                        </figure>
+                        <figure class="item-card">
+                            <a href="<?php echo ROOT_URL . 'categorypage.php?s=Laptops' ?>">
+                                <img src="https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                                <figcaption>Laptops</figcaption>
+                            </a>
+                        </figure>  
+                        <figure class="item-card">
+                            <a href="<?php echo ROOT_URL . 'categorypage.php?s=Phones' ?>">
+                                <img src="https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                                <figcaption>Phones</figcaption>
+                            </a>
+                        </figure>  
+                        <figure class="item-card">
+                            <a href="<?php echo ROOT_URL . 'categorypage.php?s=Tablets' ?>">
+                                <img src="https://images.pexels.com/photos/2351844/pexels-photo-2351844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                                <figcaption>Tablets</figcaption>
+                            </a>
+                        </figure>  
+                    </div>
+                <?php endfor; ?>
+            </div>    
+        </section>
+
+        <!-- Top Products -->
+        <section class="top-products">
+            <div class="item item-2">
+                <div class="content">
+                    <h2>Electronics</h2>
+                    <p>A magical and revolutionary device at an unbelievable price.</p>
+                    <a href="<?php echo ROOT_URL . 'categorypage.php?s=Electronics' ?>" class="btn">Shop Now</a>
+                </div>
+            </div> 
+        </section>
+
+        <section id="parallax-area">
+            <div class="grid-content">
+                <?php for($i=1;$i<=5;$i=$i+2):?>
+                    <div class="<?php echo 'box-' . intval($i) ?>"></div>
+                    <div class="<?php echo 'box-' . intval($i+1) ?>">
+                    <div class="content-wrap">
+                        <h2>Product1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vero ullam a nihil reiciendis totam voluptatem nemo dolorem blanditiis at!</p>
+                        <a href="<?php echo ROOT_URL . 'categorypage.php?s=Electronics' ?>" class="btn">Shop Now</a>
+                    </div>
+                </div>
+                <?php endfor; ?>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <?php include('include/footer.php'); ?>
+
+    <script src="js/homepage.js"></script>
+</body>
 </html>

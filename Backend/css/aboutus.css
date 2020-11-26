@@ -36,7 +36,7 @@
 
 
 body{
-  background: url("../images/background.jpg") no-repeat center center/cover;
+  background-image: url("background.jpg") no-repeat center center/cover;
   margin: 0;
   padding: 0;
 }
@@ -76,7 +76,7 @@ body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding:16px;
   text-align: center;
-  background-image: url("../images/old-brown-paper-texture-image-900x741.jpg");
+  background-image: url("old-brown-paper-texture-image-900x741.jpg");
 }
 
 .card:hover {
@@ -127,7 +127,7 @@ video{
 }
 
 .right_section{
-  background-image: url("../images/old-brown-paper-texture-image-900x741.jpg");
+  background-image: url("old-brown-paper-texture-image-900x741.jpg");
 }
 
 #companies{
