@@ -46,6 +46,9 @@
 
         $query = "INSERT INTO user(name,email,password,account)VALUES('$name','$email','$password','$account')";
         mysqli_query($conn, $query);
+        $user_check_query = "SELECT * FROM user WHERE email='$email' LIMIT 1";
+        $result = mysqli_query($conn, $user_check_query);
+        $user = mysqli_fetch_assoc($result);
         $_SESSION['uid'] = $user['id'];
         $_SESSION['uname'] = $name;
         $_SESSION['uaccess'] = $account;

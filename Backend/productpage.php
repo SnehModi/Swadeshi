@@ -190,7 +190,7 @@
                                 <span class="count">(<?php echo $product['review'] ?>)</span> Reviews
                             </div>
                             <br>
-                            <div class="price">$<?php echo $product['price'] ?></div>
+                            <div class="price">Rs.<?php echo $product['price'] ?></div>
                         </div>
                     </div>  
                 <?php endforeach; ?>

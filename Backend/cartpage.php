@@ -63,7 +63,7 @@
                         ?>
                         <tr>
                             <td><?php echo $product['name'] ?></td>
-                            <td>$<?php echo $product['price'] ?></td>
+                            <td>Rs.<?php echo $product['price'] ?></td>
                         </tr>
                     <?php endforeach; ?>
                     <tr>
@@ -104,7 +104,7 @@
                                     <span class="count">(<?php echo $product['review'] ?>)</span>
                                 </div>
                                 <br>
-                                <div class="price">$<?php echo $product['price'] ?></div>
+                                <div class="price">Rs.<?php echo $product['price'] ?></div>
                             </div>
                             <a id="remove-btn" class="btn" onclick="removeItem(<?php echo $product['id'] ?>)">Remove</a>
                         </div>  
