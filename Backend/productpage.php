@@ -91,7 +91,7 @@
                     <span class="number-rating"><?php echo $product['rating'] ?></span>
                     <span class="count">(<?php echo $product['review'] ?>)</span> Reviews
                 </div>
-                <h2 class="price">$<?php echo $product['price'] ?></h2>
+                <h2 class="price">Rs.<?php echo $product['price'] ?></h2>
                 <div class="status">
                     <div class="avalibility">
                         <strong>Avalibility : </strong>
